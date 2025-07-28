@@ -41,7 +41,7 @@ func TestStreamReadCancellation(t *testing.T) {
 	})
 
 	// This test is especially valuable when run with race detector,
-	// see https://github.com/quic-go/quic-go/issues/3239.
+	// see https://github.com/refraction-networking/uquic/issues/3239.
 	t.Run("concurrent", func(t *testing.T) {
 		testStreamCancellation(t, func(str quic.ReceiveStream) error {
 			errChan := make(chan error, 1)
@@ -99,7 +99,7 @@ func TestStreamWriteCancellation(t *testing.T) {
 	})
 
 	// This test is especially valuable when run with race detector,
-	// see https://github.com/quic-go/quic-go/issues/3239.
+	// see https://github.com/refraction-networking/uquic/issues/3239.
 	t.Run("concurrent", func(t *testing.T) {
 		testStreamCancellation(t, nil, func(str quic.SendStream) error {
 			errChan := make(chan error, 1)

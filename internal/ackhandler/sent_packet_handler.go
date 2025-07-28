@@ -6,7 +6,7 @@ import (
 	"time"
 	"sync"
 
-	congestionExt "github.com/quic-go/quic-go/congestion"
+	congestionExt "github.com/refraction-networking/uquic/congestion"
 	"github.com/refraction-networking/uquic/internal/congestion"
 	"github.com/refraction-networking/uquic/internal/protocol"
 	"github.com/refraction-networking/uquic/internal/qerr"

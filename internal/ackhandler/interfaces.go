@@ -3,7 +3,7 @@ package ackhandler
 import (
 	"time"
 
-	"github.com/quic-go/quic-go/congestion"
+	"github.com/refraction-networking/uquic/congestion"
 	"github.com/refraction-networking/uquic/internal/protocol"
 	"github.com/refraction-networking/uquic/internal/wire"
 )
