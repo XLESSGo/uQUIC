@@ -3,7 +3,7 @@ package congestion
 import (
 	"time"
 
-	"github.com/quic-go/quic-go/internal/protocol"
+	"github.com/refraction-networking/utls/internal/protocol"
 )
 
 type (
