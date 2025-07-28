@@ -20,6 +20,11 @@ type SendAlgorithm interface {
 	SetMaxDatagramSize(protocol.ByteCount)
 }
 
+type SendAlgorithmEx interface {
+	SendAlgorithm
+	OnCongestionEventEx(priorInFlight protocol.ByteCount, eventTime time.Time, ackedPackets []congestion.AckedPacketInfo, lostPackets []congestion.LostPacketInfo)
+}
+
 // A SendAlgorithmWithDebugInfos is a SendAlgorithm that exposes some debug infos
 type SendAlgorithmWithDebugInfos interface {
 	SendAlgorithm
