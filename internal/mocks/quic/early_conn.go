@@ -16,7 +16,7 @@ import (
 
 	quic "github.com/refraction-networking/uquic"
 	gomock "go.uber.org/mock/gomock"
-	congestion "refraction-networking/uquic"
+	congestion "github.com/refraction-networking/uquic/congestion"
 )
 
 // MockEarlyConnection is a mock of EarlyConnection interface.
