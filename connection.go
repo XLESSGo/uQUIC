@@ -14,6 +14,7 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
+	"github.com/refraction-networking/uquic/congestion"
 	"github.com/refraction-networking/uquic/internal/ackhandler"
 	"github.com/refraction-networking/uquic/internal/flowcontrol"
 	"github.com/refraction-networking/uquic/internal/handshake"
