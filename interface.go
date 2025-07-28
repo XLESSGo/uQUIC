@@ -9,6 +9,7 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
+	"github.com/refraction-networking/uquic/congestion"
 	"github.com/refraction-networking/uquic/internal/handshake"
 	"github.com/refraction-networking/uquic/internal/protocol"
 	"github.com/refraction-networking/uquic/logging"
@@ -206,6 +207,8 @@ type Connection interface {
 	SendDatagram(payload []byte) error
 	// ReceiveDatagram gets a message received in a datagram, as specified in RFC 9221.
 	ReceiveDatagram(context.Context) ([]byte, error)
+
+	SetCongestionControl(congestion.CongestionControl)
 }
 
 // An EarlyConnection is a connection that is handshaking.
@@ -337,6 +340,7 @@ type Config struct {
 	// Allow0RTT allows the application to decide if a 0-RTT connection attempt should be accepted.
 	// Only valid for the server.
 	Allow0RTT bool
+	DisablePathManager bool
 	// Enable QUIC datagram support (RFC 9221).
 	EnableDatagrams bool
 	Tracer          func(context.Context, logging.Perspective, ConnectionID) *logging.ConnectionTracer
