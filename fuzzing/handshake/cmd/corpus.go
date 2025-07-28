@@ -7,13 +7,13 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	fuzzhandshake "github.com/refraction-networking/uquic/fuzzing/handshake"
-	"github.com/refraction-networking/uquic/fuzzing/internal/helper"
-	"github.com/refraction-networking/uquic/internal/handshake"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/testdata"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
+	fuzzhandshake "github.com/XLESSGo/uquic/fuzzing/handshake"
+	"github.com/XLESSGo/uquic/fuzzing/internal/helper"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/testdata"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 const alpn = "fuzz"

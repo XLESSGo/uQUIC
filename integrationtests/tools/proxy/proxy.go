@@ -9,8 +9,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
 )
 
 // Connection is a UDP connection

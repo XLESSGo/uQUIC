@@ -7,9 +7,9 @@ import (
 	"net"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/logging"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/logging"
 
 	"github.com/prometheus/client_golang/prometheus"
 )

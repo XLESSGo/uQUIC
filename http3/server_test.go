@@ -12,11 +12,11 @@ import (
 	"sync/atomic"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	mockquic "github.com/refraction-networking/uquic/internal/mocks/quic"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/testdata"
-	"github.com/refraction-networking/uquic/quicvarint"
+	quic "github.com/XLESSGo/uquic"
+	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/testdata"
+	"github.com/XLESSGo/uquic/quicvarint"
 	tls "github.com/refraction-networking/utls"
 
 	"github.com/quic-go/qpack"

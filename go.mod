@@ -1,4 +1,4 @@
-module github.com/refraction-networking/uquic
+module github.com/XLESSGo/uquic
 
 go 1.24.0
 

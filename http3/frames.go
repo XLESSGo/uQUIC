@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"io"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/quicvarint"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 // FrameType is the frame type of a HTTP/3 frame

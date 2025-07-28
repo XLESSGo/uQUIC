@@ -1,9 +1,9 @@
 package wire
 
 import (
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 // A StopSendingFrame is a STOP_SENDING frame

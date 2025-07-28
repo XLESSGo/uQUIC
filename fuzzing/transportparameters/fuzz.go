@@ -4,9 +4,9 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/refraction-networking/uquic/fuzzing/internal/helper"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/fuzzing/internal/helper"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 // PrefixLen is the number of bytes used for configuration

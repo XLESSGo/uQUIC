@@ -3,7 +3,7 @@ package flowcontrol
 import (
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 type flowController interface {

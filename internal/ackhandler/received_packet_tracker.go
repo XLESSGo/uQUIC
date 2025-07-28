@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 // The receivedPacketTracker tracks packets for the Initial and Handshake packet number space.

@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/exp/rand"
 
-	quic "github.com/refraction-networking/uquic"
+	quic "github.com/XLESSGo/uquic"
 
 	"github.com/stretchr/testify/require"
 )

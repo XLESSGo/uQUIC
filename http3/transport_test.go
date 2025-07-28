@@ -9,10 +9,10 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	mockquic "github.com/refraction-networking/uquic/internal/mocks/quic"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
+	quic "github.com/XLESSGo/uquic"
+	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
 	tls "github.com/refraction-networking/utls"
 
 	"github.com/stretchr/testify/require"

@@ -8,8 +8,8 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/logging"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/logging"
 
 	"github.com/stretchr/testify/require"
 )

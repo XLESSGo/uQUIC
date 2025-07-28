@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
+	quic "github.com/XLESSGo/uquic"
 
 	"golang.org/x/sync/errgroup"
 

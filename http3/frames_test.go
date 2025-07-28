@@ -6,9 +6,9 @@ import (
 	"fmt"
 	"io"
 
-	quic "github.com/refraction-networking/uquic"
-	mockquic "github.com/refraction-networking/uquic/internal/mocks/quic"
-	"github.com/refraction-networking/uquic/quicvarint"
+	quic "github.com/XLESSGo/uquic"
+	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
+	"github.com/XLESSGo/uquic/quicvarint"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

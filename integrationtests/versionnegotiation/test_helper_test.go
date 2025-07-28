@@ -6,11 +6,11 @@ import (
 	"flag"
 	"os"
 
-	quic "github.com/refraction-networking/uquic"
+	quic "github.com/XLESSGo/uquic"
 	tls "github.com/refraction-networking/utls"
 
-	"github.com/refraction-networking/uquic/integrationtests/tools"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/integrationtests/tools"
+	"github.com/XLESSGo/uquic/logging"
 )
 
 var (

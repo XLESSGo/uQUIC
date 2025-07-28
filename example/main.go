@@ -15,10 +15,10 @@ import (
 
 	_ "net/http/pprof"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/http3"
-	"github.com/refraction-networking/uquic/internal/testdata"
-	"github.com/refraction-networking/uquic/qlog"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/http3"
+	"github.com/XLESSGo/uquic/internal/testdata"
+	"github.com/XLESSGo/uquic/qlog"
 )
 
 type binds []string

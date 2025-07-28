@@ -3,9 +3,9 @@ package ackhandler
 import (
 	"time"
 
-	"github.com/refraction-networking/uquic/congestion"
-	cgInternal "github.com/refraction-networking/uquic/internal/congestion"
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/congestion"
+	cgInternal "github.com/XLESSGo/uquic/internal/congestion"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 var (

@@ -6,9 +6,9 @@ import (
 	"testing"
 
 	"github.com/francoispqt/gojay"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/logging"
 	"github.com/stretchr/testify/require"
 )
 

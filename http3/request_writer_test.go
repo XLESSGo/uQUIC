@@ -5,7 +5,7 @@ import (
 	"io"
 	"net/http"
 
-	mockquic "github.com/refraction-networking/uquic/internal/mocks/quic"
+	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
 
 	"github.com/quic-go/qpack"
 	"go.uber.org/mock/gomock"

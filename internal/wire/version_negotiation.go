@@ -5,7 +5,7 @@ import (
 	"encoding/binary"
 	"errors"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 // ParseVersionNegotiationPacket parses a Version Negotiation packet.

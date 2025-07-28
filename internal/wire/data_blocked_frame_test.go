@@ -4,8 +4,8 @@ import (
 	"io"
 	"testing"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/quicvarint"
 
 	"github.com/stretchr/testify/require"
 )

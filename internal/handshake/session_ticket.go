@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 const sessionTicketRevision = 4

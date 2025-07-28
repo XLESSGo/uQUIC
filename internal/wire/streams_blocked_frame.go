@@ -3,8 +3,8 @@ package wire
 import (
 	"fmt"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 // A StreamsBlockedFrame is a STREAMS_BLOCKED frame
