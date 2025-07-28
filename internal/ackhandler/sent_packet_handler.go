@@ -318,6 +318,7 @@ func (h *sentPacketHandler) SentPacket(
 	pnSpace.history.SentAckElicitingPacket(p)
 	if h.tracer != nil && h.tracer.UpdatedMetrics != nil {
 		h.tracer.UpdatedMetrics(h.rttStats, cc.GetCongestionWindow(), h.bytesInFlight, h.packetsInFlight())
+	}	
 	h.setLossDetectionTimer(t)
 }
 
