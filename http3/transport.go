@@ -17,8 +17,8 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/internal/protocol"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 // Settings are HTTP/3 settings that apply to the underlying connection.

@@ -9,7 +9,7 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	quic "github.com/refraction-networking/uquic"
+	quic "github.com/XLESSGo/uquic"
 )
 
 func traceGetConn(trace *httptrace.ClientTrace, hostPort string) {

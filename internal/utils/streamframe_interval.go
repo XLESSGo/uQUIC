@@ -3,7 +3,7 @@ package utils
 import (
 	"fmt"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 // ByteInterval is an interval from one ByteCount to the other

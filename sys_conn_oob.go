@@ -19,8 +19,8 @@ import (
 	"golang.org/x/net/ipv6"
 	"golang.org/x/sys/unix"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
 )
 
 const (

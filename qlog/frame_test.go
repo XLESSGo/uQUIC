@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/francoispqt/gojay"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/logging"
 	"github.com/stretchr/testify/require"
 )
 

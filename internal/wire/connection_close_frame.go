@@ -3,8 +3,8 @@ package wire
 import (
 	"io"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 // A ConnectionCloseFrame is a CONNECTION_CLOSE frame

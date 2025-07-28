@@ -10,7 +10,7 @@ import (
 
 	"golang.org/x/crypto/chacha20"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 type headerProtector interface {

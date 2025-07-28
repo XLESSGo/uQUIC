@@ -6,7 +6,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/stretchr/testify/require"
 )
 

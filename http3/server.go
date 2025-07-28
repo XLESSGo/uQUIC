@@ -18,9 +18,9 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/quicvarint"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/quicvarint"
 
 	"github.com/quic-go/qpack"
 )

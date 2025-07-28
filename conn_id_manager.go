@@ -3,11 +3,11 @@ package quic
 import (
 	"fmt"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/utils"
-	list "github.com/refraction-networking/uquic/internal/utils/linkedlist"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/utils"
+	list "github.com/XLESSGo/uquic/internal/utils/linkedlist"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 type newConnID struct {
@@ -295,7 +295,7 @@ func (h *connIDManager) RetireConnIDForPath(pathID pathID) {
 // Using the connIDManager after it has been closed can have disastrous effects:
 // If the connection ID is rotated, a new entry would be inserted into the packet handler map,
 // leading to a memory leak of the connection struct.
-// See https://github.com/refraction-networking/uquic/pull/4852 for more details.
+// See https://github.com/XLESSGo/uquic/pull/4852 for more details.
 func (h *connIDManager) assertNotClosed() {
 	if h.closed {
 		panic("connection ID manager is closed")

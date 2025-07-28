@@ -6,12 +6,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/flowcontrol"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/flowcontrol"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 type receiveStreamI interface {

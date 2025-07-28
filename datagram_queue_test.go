@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
 
 	"github.com/stretchr/testify/require"
 )

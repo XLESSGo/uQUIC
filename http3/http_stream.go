@@ -9,8 +9,8 @@ import (
 	"net/http/httptrace"
 
 	"github.com/quic-go/qpack"
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/internal/protocol"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/internal/protocol"
 )
 
 // A Stream is an HTTP/3 request stream.

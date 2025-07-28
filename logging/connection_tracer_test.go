@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/logging"
 	"github.com/stretchr/testify/require"
 )
 

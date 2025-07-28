@@ -8,9 +8,9 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	quicproxy "github.com/refraction-networking/uquic/integrationtests/tools/proxy"
-	"github.com/refraction-networking/uquic/internal/wire"
+	quic "github.com/XLESSGo/uquic"
+	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
+	"github.com/XLESSGo/uquic/internal/wire"
 
 	"github.com/stretchr/testify/require"
 )

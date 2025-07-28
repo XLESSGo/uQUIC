@@ -14,16 +14,16 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	"github.com/refraction-networking/uquic/congestion"
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/flowcontrol"
-	"github.com/refraction-networking/uquic/internal/handshake"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/utils/ringbuffer"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/congestion"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/flowcontrol"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/utils/ringbuffer"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/logging"
 )
 
 type unpacker interface {
@@ -308,7 +308,7 @@ var newConnection = func(
 		// different from protocol.DefaultActiveConnectionIDLimit.
 		// If set to the default value, it will be omitted from the transport parameters, which will make
 		// old quic-go versions interpret it as 0, instead of the default value of 2.
-		// See https://github.com/refraction-networking/uquic/pull/3806.
+		// See https://github.com/XLESSGo/uquic/pull/3806.
 		ActiveConnectionIDLimit:   protocol.MaxActiveConnectionIDs,
 		InitialSourceConnectionID: srcConnID,
 		RetrySourceConnectionID:   retrySrcConnID,
@@ -419,7 +419,7 @@ var newClientConnection = func(
 		// different from protocol.DefaultActiveConnectionIDLimit.
 		// If set to the default value, it will be omitted from the transport parameters, which will make
 		// old quic-go versions interpret it as 0, instead of the default value of 2.
-		// See https://github.com/refraction-networking/uquic/pull/3806.
+		// See https://github.com/XLESSGo/uquic/pull/3806.
 		ActiveConnectionIDLimit:   protocol.MaxActiveConnectionIDs,
 		InitialSourceConnectionID: srcConnID,
 	}

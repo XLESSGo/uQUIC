@@ -8,7 +8,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/refraction-networking/uquic/http3"
+	"github.com/XLESSGo/uquic/http3"
 
 	"github.com/stretchr/testify/require"
 )

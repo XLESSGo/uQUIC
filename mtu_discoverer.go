@@ -3,11 +3,11 @@ package quic
 import (
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/logging"
 )
 
 type mtuDiscoverer interface {

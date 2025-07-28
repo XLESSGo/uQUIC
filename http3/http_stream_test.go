@@ -8,9 +8,9 @@ import (
 	"net/http"
 	"net/http/httptrace"
 
-	mockquic "github.com/refraction-networking/uquic/internal/mocks/quic"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
+	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
 
 	"github.com/quic-go/qpack"
 

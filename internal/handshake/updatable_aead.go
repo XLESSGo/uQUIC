@@ -9,10 +9,10 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/logging"
 )
 
 // KeyUpdateInterval is the maximum number of packets we send or receive before initiating a key update.

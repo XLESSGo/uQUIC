@@ -13,14 +13,14 @@ import (
 
 	"golang.org/x/time/rate"
 
-	"github.com/refraction-networking/uquic/internal/handshake"
-	mocklogging "github.com/refraction-networking/uquic/internal/mocks/logging"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/testdata"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	mocklogging "github.com/XLESSGo/uquic/internal/mocks/logging"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/testdata"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/logging"
 
 	. "github.com/onsi/ginkgo/v2"
 	. "github.com/onsi/gomega"

@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/qlog"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/qlog"
 
 	"github.com/stretchr/testify/require"
 )

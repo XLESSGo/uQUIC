@@ -9,10 +9,10 @@ import (
 
 	tls "github.com/refraction-networking/utls"
 
-	"github.com/refraction-networking/uquic/congestion"
-	"github.com/refraction-networking/uquic/internal/handshake"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/congestion"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/logging"
 )
 
 // The StreamID is the ID of a QUIC stream.

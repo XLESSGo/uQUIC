@@ -4,10 +4,10 @@ import (
 	"crypto/rand"
 	"net"
 
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 type pathID int64

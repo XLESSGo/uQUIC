@@ -9,11 +9,11 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	quicproxy "github.com/refraction-networking/uquic/integrationtests/tools/proxy"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/logging"
-	"github.com/refraction-networking/uquic/quicvarint"
+	quic "github.com/XLESSGo/uquic"
+	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/logging"
+	"github.com/XLESSGo/uquic/quicvarint"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"

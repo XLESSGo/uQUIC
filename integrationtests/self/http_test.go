@@ -22,9 +22,9 @@ import (
 	tls "github.com/refraction-networking/utls"
 	"golang.org/x/sync/errgroup"
 
-	quic "github.com/refraction-networking/uquic"
-	"github.com/refraction-networking/uquic/http3"
-	quicproxy "github.com/refraction-networking/uquic/integrationtests/tools/proxy"
+	quic "github.com/XLESSGo/uquic"
+	"github.com/XLESSGo/uquic/http3"
+	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
 
 	"github.com/stretchr/testify/require"
 )

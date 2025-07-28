@@ -1,8 +1,8 @@
 package wire
 
 import (
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 // A StreamDataBlockedFrame is a STREAM_DATA_BLOCKED frame

@@ -13,11 +13,11 @@ import (
 
 	"golang.org/x/exp/rand"
 
-	quic "github.com/refraction-networking/uquic"
-	quicproxy "github.com/refraction-networking/uquic/integrationtests/tools/proxy"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/testutils"
+	quic "github.com/XLESSGo/uquic"
+	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/testutils"
 
 	"github.com/stretchr/testify/require"
 )

@@ -4,7 +4,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/refraction-networking/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/utils"
 
 	"github.com/stretchr/testify/require"
 )

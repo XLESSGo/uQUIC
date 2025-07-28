@@ -4,8 +4,8 @@ import (
 	"errors"
 	"io"
 
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils"
 )
 
 // ParseShortHeader parses a short header packet.

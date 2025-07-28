@@ -5,12 +5,12 @@ import (
 	"sync"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/flowcontrol"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/utils/ringbuffer"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/quicvarint"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/flowcontrol"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/utils/ringbuffer"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/quicvarint"
 )
 
 const (
@@ -209,7 +209,7 @@ func (f *framer) appendControlFrames(
 // This is a hack.
 // It is easier to implement than propagating an error return value in QueueControlFrame.
 // The correct solution would be to queue frames with their respective structs.
-// See https://github.com/refraction-networking/uquic/issues/4271 for the queueing of stream-related control frames.
+// See https://github.com/XLESSGo/uquic/issues/4271 for the queueing of stream-related control frames.
 func (f *framer) QueuedTooManyControlFrames() bool {
 	return f.queuedTooManyControlFrames
 }

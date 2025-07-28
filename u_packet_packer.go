@@ -6,9 +6,9 @@ import (
 	"time"
 
 	"github.com/refraction-networking/clienthellod"
-	"github.com/refraction-networking/uquic/internal/handshake"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/wire"
 )
 
 // uPacketPacker is an extended packetPacker which is used

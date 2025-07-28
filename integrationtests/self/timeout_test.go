@@ -13,10 +13,10 @@ import (
 	"testing"
 	"time"
 
-	quic "github.com/refraction-networking/uquic"
-	quicproxy "github.com/refraction-networking/uquic/integrationtests/tools/proxy"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/logging"
+	quic "github.com/XLESSGo/uquic"
+	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/logging"
 
 	"github.com/stretchr/testify/require"
 )
@@ -227,7 +227,7 @@ func TestKeepAlive(t *testing.T) {
 	require.True(t, nerr.Timeout())
 
 	// can't rely on the server connection closing, since we impose a minimum idle timeout of 5s,
-	// see https://github.com/refraction-networking/uquic/issues/4751
+	// see https://github.com/XLESSGo/uquic/issues/4751
 	serverConn.CloseWithError(0, "")
 }
 

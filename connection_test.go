@@ -11,16 +11,16 @@ import (
 	"testing"
 	"time"
 
-	"github.com/refraction-networking/uquic/internal/ackhandler"
-	"github.com/refraction-networking/uquic/internal/handshake"
-	"github.com/refraction-networking/uquic/internal/mocks"
-	mockackhandler "github.com/refraction-networking/uquic/internal/mocks/ackhandler"
-	mocklogging "github.com/refraction-networking/uquic/internal/mocks/logging"
-	"github.com/refraction-networking/uquic/internal/protocol"
-	"github.com/refraction-networking/uquic/internal/qerr"
-	"github.com/refraction-networking/uquic/internal/utils"
-	"github.com/refraction-networking/uquic/internal/wire"
-	"github.com/refraction-networking/uquic/logging"
+	"github.com/XLESSGo/uquic/internal/ackhandler"
+	"github.com/XLESSGo/uquic/internal/handshake"
+	"github.com/XLESSGo/uquic/internal/mocks"
+	mockackhandler "github.com/XLESSGo/uquic/internal/mocks/ackhandler"
+	mocklogging "github.com/XLESSGo/uquic/internal/mocks/logging"
+	"github.com/XLESSGo/uquic/internal/protocol"
+	"github.com/XLESSGo/uquic/internal/qerr"
+	"github.com/XLESSGo/uquic/internal/utils"
+	"github.com/XLESSGo/uquic/internal/wire"
+	"github.com/XLESSGo/uquic/logging"
 	tls "github.com/refraction-networking/utls"
 
 	"github.com/stretchr/testify/assert"
@@ -1745,7 +1745,7 @@ func TestConnectionPacketPacing(t *testing.T) {
 }
 
 // When the send queue blocks, we need to reset the pacing timer, otherwise the run loop might busy-loop.
-// See https://github.com/refraction-networking/uquic/pull/4943 for more details.
+// See https://github.com/XLESSGo/uquic/pull/4943 for more details.
 func TestConnectionPacingAndSendQueue(t *testing.T) {
 	mockCtrl := gomock.NewController(t)
 	sph := mockackhandler.NewMockSentPacketHandler(mockCtrl)
