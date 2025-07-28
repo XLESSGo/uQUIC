@@ -3,7 +3,7 @@ package congestion
 import (
 	"time"
 
-	"github.com/refraction-networking/utls/internal/protocol"
+	"github.com/refraction-networking/uquic/internal/protocol"
 )
 
 type (
