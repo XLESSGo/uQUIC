@@ -14,7 +14,7 @@ import (
 	time "time"
 
 	gomock "go.uber.org/mock/gomock"
-	congestion "github.com/quic-go/quic-go/congestion"
+	congestion "github.com/refraction-networking/uquic/congestion"
 	ackhandler "github.com/refraction-networking/uquic/internal/ackhandler"
 	protocol "github.com/refraction-networking/uquic/internal/protocol"
 	wire "github.com/refraction-networking/uquic/internal/wire"
