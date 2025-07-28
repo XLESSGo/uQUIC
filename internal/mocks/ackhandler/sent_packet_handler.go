@@ -14,6 +14,7 @@ import (
 	time "time"
 
 	gomock "go.uber.org/mock/gomock"
+	congestion "github.com/quic-go/quic-go/congestion"
 	ackhandler "github.com/refraction-networking/uquic/internal/ackhandler"
 	protocol "github.com/refraction-networking/uquic/internal/protocol"
 	wire "github.com/refraction-networking/uquic/internal/wire"
@@ -571,6 +572,42 @@ func (m *MockSentPacketHandler) TimeUntilSend() time.Time {
 	ret := m.ctrl.Call(m, "TimeUntilSend")
 	ret0, _ := ret[0].(time.Time)
 	return ret0
+}
+
+// SetCongestionControl mocks base method.
+func (m *MockSentPacketHandler) SetCongestionControl(arg0 congestion.CongestionControl) {
+	m.ctrl.T.Helper()
+	m.ctrl.Call(m, "SetCongestionControl", arg0)
+}
+
+// SetCongestionControl indicates an expected call of SetCongestionControl.
+func (mr *MockSentPacketHandlerMockRecorder) SetCongestionControl(arg0 any) *MockSentPacketHandlerSetCongestionControlCall {
+	mr.mock.ctrl.T.Helper()
+	call := mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "SetCongestionControl", reflect.TypeOf((*MockSentPacketHandler)(nil).SetCongestionControl), arg0)
+	return &MockSentPacketHandlerSetCongestionControlCall{Call: call}
+}
+
+// MockSentPacketHandlerSetCongestionControlCall wrap *gomock.Call
+type MockSentPacketHandlerSetCongestionControlCall struct {
+	*gomock.Call
+}
+
+// Return rewrite *gomock.Call.Return
+func (c *MockSentPacketHandlerSetCongestionControlCall) Return() *MockSentPacketHandlerSetCongestionControlCall {
+	c.Call = c.Call.Return()
+	return c
+}
+
+// Do rewrite *gomock.Call.Do
+func (c *MockSentPacketHandlerSetCongestionControlCall) Do(f func(congestion.CongestionControl)) *MockSentPacketHandlerSetCongestionControlCall {
+	c.Call = c.Call.Do(f)
+	return c
+}
+
+// DoAndReturn rewrite *gomock.Call.DoAndReturn
+func (c *MockSentPacketHandlerSetCongestionControlCall) DoAndReturn(f func(congestion.CongestionControl)) *MockSentPacketHandlerSetCongestionControlCall {
+	c.Call = c.Call.DoAndReturn(f)
+	return c
 }
 
 // TimeUntilSend indicates an expected call of TimeUntilSend.
