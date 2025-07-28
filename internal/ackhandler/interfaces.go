@@ -3,6 +3,7 @@ package ackhandler
 import (
 	"time"
 
+	"github.com/refraction-networking/uquic/congestion"
 	"github.com/refraction-networking/uquic/internal/protocol"
 	"github.com/refraction-networking/uquic/internal/wire"
 )
@@ -36,6 +37,7 @@ type SentPacketHandler interface {
 	OnLossDetectionTimeout(now time.Time) error
 
 	MigratedPath(now time.Time, initialMaxPacketSize protocol.ByteCount)
+	SetCongestionControl(congestion.CongestionControl)
 }
 
 type sentPacketTracker interface {

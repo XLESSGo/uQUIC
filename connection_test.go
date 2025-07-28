@@ -1745,7 +1745,7 @@ func TestConnectionPacketPacing(t *testing.T) {
 }
 
 // When the send queue blocks, we need to reset the pacing timer, otherwise the run loop might busy-loop.
-// See https://github.com/quic-go/quic-go/pull/4943 for more details.
+// See https://github.com/refraction-networking/uquic/pull/4943 for more details.
 func TestConnectionPacingAndSendQueue(t *testing.T) {
 	mockCtrl := gomock.NewController(t)
 	sph := mockackhandler.NewMockSentPacketHandler(mockCtrl)
