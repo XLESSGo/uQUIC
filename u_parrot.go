@@ -658,17 +658,28 @@ func QUICID2Spec(id QUICID) (QUICSpec, error) {
 }
 
 func ShuffleTLSExtensions(exts []tls.TLSExtension) []tls.TLSExtension {
-	mrand.Shuffle(len(exts), func(i, j int) {
+	n := len(exts)
+	for i := n - 1; i > 0; i-- {
+		jBig, err := rand.Int(rand.Reader, big.NewInt(int64(i+1)))
+		if err != nil {
+			panic(err)
+		}
+		j := int(jBig.Int64())
 		exts[i], exts[j] = exts[j], exts[i]
-	})
+	}
 	return exts
 }
 
 func ShuffleQUICTransportParameters(qtp *tls.QUICTransportParametersExtension) *tls.QUICTransportParametersExtension {
-	// shuffle the order of parameters
-	mrand.Shuffle(len(qtp.TransportParameters), func(i, j int) {
+	n := len(qtp.TransportParameters)
+	for i := n - 1; i > 0; i-- {
+		jBig, err := rand.Int(rand.Reader, big.NewInt(int64(i+1)))
+		if err != nil {
+			panic(err)
+		}
+		j := int(jBig.Int64())
 		qtp.TransportParameters[i], qtp.TransportParameters[j] = qtp.TransportParameters[j], qtp.TransportParameters[i]
-	})
+	}
 	return qtp
 }
 
