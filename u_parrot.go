@@ -4,7 +4,6 @@ import (
 	"crypto/rand"
 	"fmt"
 	"math/big"
-	mrand "math/rand"
 
 	tls "github.com/refraction-networking/utls"
 )
