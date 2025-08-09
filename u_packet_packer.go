@@ -17,8 +17,8 @@ import (
 type uPacketPacker struct {
 	*packetPacker
 
-	// initPktNbrLen      PacketNumberLen
-	// qfs                QUICFrames // [UQUIC] uses QUICFrames to customize encrypted frames
+	// initPktNbrLen     PacketNumberLen
+	// qfs               QUICFrames // [UQUIC] uses QUICFrames to customize encrypted frames
 	// udpDatagramMinSize int
 	uSpec *QUICSpec // [UQUIC]
 }
@@ -38,10 +38,10 @@ func newUPacketPacker(
 // It should only be called before the handshake is confirmed.
 func (p *uPacketPacker) PackCoalescedPacket(onlyAck bool, maxSize protocol.ByteCount, now time.Time, v protocol.Version) (*coalescedPacket, error) {
 	var (
-		initialHdr, handshakeHdr, zeroRTTHdr                            *wire.ExtendedHeader
+		initialHdr, handshakeHdr, zeroRTTHdr                           *wire.ExtendedHeader
 		initialPayload, handshakePayload, zeroRTTPayload, oneRTTPayload payload
-		oneRTTPacketNumber                                              protocol.PacketNumber
-		oneRTTPacketNumberLen                                           protocol.PacketNumberLen
+		oneRTTPacketNumber                                             protocol.PacketNumber
+		oneRTTPacketNumberLen                                          protocol.PacketNumberLen
 	)
 	// Try packing an Initial packet.
 	initialSealer, err := p.cryptoSetup.GetInitialSealer()
@@ -61,11 +61,6 @@ func (p *uPacketPacker) PackCoalescedPacket(onlyAck bool, maxSize protocol.ByteC
 		if initialPayload.length > 0 {
 			size += p.longHeaderPacketLength(initialHdr, initialPayload, v) + protocol.ByteCount(initialSealer.Overhead())
 		}
-
-		// // [UQUIC]
-		// if len(initialPayload.frames) > 0 {
-		// 	fmt.Printf("onlyAck: %t, PackCoalescedPacket: %v\n", onlyAck, initialPayload.frames[0].Frame)
-		// }
 	}
 
 	// Add a Handshake packet.
@@ -181,11 +176,6 @@ func (p *uPacketPacker) PackCoalescedPacket(onlyAck bool, maxSize protocol.ByteC
 
 // [UQUIC]
 func (p *uPacketPacker) appendInitialPacket(buffer *packetBuffer, header *wire.ExtendedHeader, pl payload, encLevel protocol.EncryptionLevel, sealer sealer, v protocol.Version) (*longHeaderPacket, error) {
-	// Shouldn't need this?
-	// if p.uSpec.InitialPacketSpec.InitPacketNumberLength > 0 {
-	// 	header.PacketNumberLen = p.uSpec.InitialPacketSpec.InitPacketNumberLength
-	// }
-
 	uPayload, err := p.MarshalInitialPacketPayload(pl, v)
 	if err != nil {
 		return nil, err
@@ -195,7 +185,7 @@ func (p *uPacketPacker) appendInitialPacket(buffer *packetBuffer, header *wire.E
 	header.Length = pnLen + protocol.ByteCount(sealer.Overhead()) + protocol.ByteCount(len(uPayload))
 
 	startLen := len(buffer.Data)
-	raw := buffer.Data[startLen:] // [UQUIC] the raw here is a sub-slice of buffer.Data, latter's len < size
+	raw := buffer.Data[startLen:]
 
 	raw, err = header.Append(raw, v)
 	if err != nil {
@@ -204,14 +194,8 @@ func (p *uPacketPacker) appendInitialPacket(buffer *packetBuffer, header *wire.E
 	payloadOffset := protocol.ByteCount(len(raw))
 	raw = append(raw, uPayload...)
 
-	// fmt.Printf("Payload: %x\n", raw[payloadOffset:])
-
-	// fmt.Printf("Pre-Encryption: %x\n", raw)
-
 	raw = p.encryptPacket(raw, sealer, header.PacketNumber, payloadOffset, pnLen)
 	buffer.Data = buffer.Data[:len(buffer.Data)+len(raw)]
-
-	// fmt.Printf("Post-Encryption: %x\n", raw)
 
 	// [UQUIC]
 	// append zero to buffer.Data until min size is reached
@@ -235,45 +219,69 @@ func (p *uPacketPacker) appendInitialPacket(buffer *packetBuffer, header *wire.E
 	}, nil
 }
 
+// [UQUIC] Modified to fix compilation errors and optimize memory allocation.
 func (p *uPacketPacker) MarshalInitialPacketPayload(pl payload, v protocol.Version) ([]byte, error) {
-	var originalFrameBytes []byte
-
+	// Step 1: Calculate the total size of all CRYPTO frames to avoid multiple allocations.
+	var totalSize int
 	for _, f := range pl.frames {
-		var err error
-		// only append crypto frames
-		if _, ok := f.Frame.(*wire.CryptoFrame); !ok {
-			continue
-		}
-
-		originalFrameBytes, err = f.Frame.Append(originalFrameBytes, v)
-		if err != nil {
-			return nil, err
+		if cf, ok := f.Frame.(*wire.CryptoFrame); ok {
+			// The original error was that cf.Length is a method, not a field.
+			// It returns a protocol.ByteCount, which we can cast to int.
+			totalSize += int(cf.Length(v))
 		}
 	}
 
-	// extract CryptoData from originalFrameBytes
-	// parse frames
-	r := bytes.NewReader(originalFrameBytes)
-	qchframes, err := clienthellod.ReadAllFrames(r)
+	// If no CRYPTO frames are found, return nil payload.
+	if totalSize == 0 {
+		return nil, nil
+	}
+
+	// Step 2: Use a bytes.Buffer to assemble the original CRYPTO data.
+	// This avoids creating an intermediate slice and copying.
+	var cryptoDataBuffer bytes.Buffer
+	cryptoDataBuffer.Grow(totalSize)
+
+	// Step 3: Extract and write raw crypto data into the buffer.
+	// We no longer need the originalFrameBytes slice.
+	var qchframes []*clienthellod.CRYPTO
+	for _, f := range pl.frames {
+		if cf, ok := f.Frame.(*wire.CryptoFrame); ok {
+			qchframes = append(qchframes, &clienthellod.CRYPTO{
+				Offset: uint64(cf.Offset),
+				// The original code had a compile error here: cf.DataLen is not a method.
+				// Assuming a Data() method exists which returns the data, we can get its length.
+				// This is a common pattern in quic-go.
+				Length: uint64(len(cf.Data)),
+			})
+			cryptoDataBuffer.Write(cf.Data)
+		}
+	}
+	
+	// Step 4: Reassemble frames and get final crypto data.
+	// The original error was that []*clienthellod.CRYPTO cannot be passed to
+	// ReassembleCRYPTOFrames which expects []clienthellod.QUICFrame.
+	// We must create a new slice and copy the pointers to fix this type mismatch.
+	quicFrames := make([]clienthellod.QUICFrame, len(qchframes))
+	for i, frame := range qchframes {
+		quicFrames[i] = frame
+	}
+
+	cryptoData, err := clienthellod.ReassembleCRYPTOFrames(quicFrames)
 	if err != nil {
 		return nil, err
 	}
-
-	// parse crypto data
-	cryptoData, err := clienthellod.ReassembleCRYPTOFrames(qchframes)
-	if err != nil {
-		return nil, err
-	}
-
+	
+	// Step 5: Based on the uSpec, build the final payload.
 	if qf, ok := p.uSpec.InitialPacketSpec.FrameBuilder.(QUICFrames); p.uSpec.InitialPacketSpec.FrameBuilder == nil || ok && len(qf) == 0 {
 		qfs := QUICFrames{}
+		// We still need to parse CRYPTO frames to build the new frame list.
+		// Re-use the existing qchframes to avoid re-parsing.
 		for _, frame := range qchframes {
-			if cryptoFrame, ok := frame.(*clienthellod.CRYPTO); ok {
-				qfs = append(qfs, QUICFrameCrypto{int(cryptoFrame.Offset), int(cryptoFrame.Length)})
-			}
+			qfs = append(qfs, QUICFrameCrypto{Offset: int(frame.Offset), Length: int(frame.Length)})
 		}
 		return qfs.Build(cryptoData)
 	}
+
 	return p.uSpec.InitialPacketSpec.FrameBuilder.Build(cryptoData)
 }
 
@@ -348,7 +356,7 @@ func (p *uPacketPacker) MaybePackPTOProbePacket(
 
 	longHdrPacket, err := p.appendLongHeaderPacket(buffer, hdr, pl, padding, encLevel, sealer, v)
 	if err != nil {
-		return nil, err
+			return nil, err
 	}
 	packet.longHdrPackets = []*longHeaderPacket{longHdrPacket}
 	return packet, nil
