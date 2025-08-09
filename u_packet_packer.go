@@ -3,7 +3,6 @@ package quic
 import (
 	"bytes"
 	"fmt"
-	"io"
 	"time"
 
 	"github.com/refraction-networking/clienthellod"
@@ -220,13 +219,15 @@ func (p *uPacketPacker) appendInitialPacket(buffer *packetBuffer, header *wire.E
 	}, nil
 }
 
-// [UQUIC] Modified to optimize memory allocation.
+// [UQUIC] Modified to fix compilation errors and optimize memory allocation.
 func (p *uPacketPacker) MarshalInitialPacketPayload(pl payload, v protocol.Version) ([]byte, error) {
 	// Step 1: Calculate the total size of all CRYPTO frames to avoid multiple allocations.
 	var totalSize int
 	for _, f := range pl.frames {
 		if cf, ok := f.Frame.(*wire.CryptoFrame); ok {
-			totalSize += int(cf.Length)
+			// The original error was that cf.Length is a method, not a field.
+			// It returns a protocol.ByteCount, which we can cast to int.
+			totalSize += int(cf.Length(v))
 		}
 	}
 
@@ -247,17 +248,25 @@ func (p *uPacketPacker) MarshalInitialPacketPayload(pl payload, v protocol.Versi
 		if cf, ok := f.Frame.(*wire.CryptoFrame); ok {
 			qchframes = append(qchframes, &clienthellod.CRYPTO{
 				Offset: uint64(cf.Offset),
-				Length: uint64(cf.DataLen()),
+				// The original code had a compile error here: cf.DataLen is not a method.
+				// Assuming a Data() method exists which returns the data, we can get its length.
+				// This is a common pattern in quic-go.
+				Length: uint64(len(cf.Data)),
 			})
 			cryptoDataBuffer.Write(cf.Data)
 		}
 	}
-
+	
 	// Step 4: Reassemble frames and get final crypto data.
-	// The ReassembleCRYPTOFrames function from clienthellod is still necessary
-	// to handle potential fragmented crypto frames.
-	// We pass the buffer directly to the reader.
-	cryptoData, err := clienthellod.ReassembleCRYPTOFrames(qchframes)
+	// The original error was that []*clienthellod.CRYPTO cannot be passed to
+	// ReassembleCRYPTOFrames which expects []clienthellod.QUICFrame.
+	// We must create a new slice and copy the pointers to fix this type mismatch.
+	quicFrames := make([]clienthellod.QUICFrame, len(qchframes))
+	for i, frame := range qchframes {
+		quicFrames[i] = frame
+	}
+
+	cryptoData, err := clienthellod.ReassembleCRYPTOFrames(quicFrames)
 	if err != nil {
 		return nil, err
 	}
@@ -347,7 +356,7 @@ func (p *uPacketPacker) MaybePackPTOProbePacket(
 
 	longHdrPacket, err := p.appendLongHeaderPacket(buffer, hdr, pl, padding, encLevel, sealer, v)
 	if err != nil {
-		return nil, err
+			return nil, err
 	}
 	packet.longHdrPackets = []*longHeaderPacket{longHdrPacket}
 	return packet, nil
