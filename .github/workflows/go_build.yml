@@ -3,8 +3,10 @@
 
 name: "Go Build"
 
-# on: [push, pull_request]
-on: push # no need to double-run on PR if we are running on all pushes already
+on:
+  push:
+    branches:
+      - '*'
 
 jobs:
   build:
