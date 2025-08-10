@@ -15,6 +15,8 @@ github.com/XLESSd/protean v0.0.0/go.mod h1:7xW0eXyIbq3IrKdsGYqSss/nYVT5LmK0iEzy1
 github.com/andybalholm/brotli v1.2.0 h1:ukwgCxwYrmACq68yiUqwIWnGY0cTPox/M94sVwToPjQ=
 github.com/andybalholm/brotli v1.2.0/go.mod h1:rzTDkvFWvIrjDXZHkuS16NPggd91W3kUSvPlQ1pLaKY=
 github.com/anmitsu/go-shlex v0.0.0-20161002113705-648efa622239/go.mod h1:2FmKhYUyUczH0OGQWaF5ceTx0UBShxjsH6f8oGKYe2c=
+github.com/ban6cat6/protean v0.0.0-20250804130928-662633c2b190 h1:DHrSquUEEo2YLciqu60KSYuAvzmI+eksOc6lt2PTK8A=
+github.com/ban6cat6/protean v0.0.0-20250804130928-662633c2b190/go.mod h1:ILMH8FXN5rDwC6DbXtxDL9gGgqAjMEWfN/dqd5oyRqU=
 github.com/beorn7/perks v0.0.0-20180321164747-3a771d992973/go.mod h1:Dwedo/Wpr24TaqPxmxbtue+5NUziq4I4S80YR8gNf3Q=
 github.com/beorn7/perks v1.0.1 h1:VlbKKnNfV8bJzeqoa4cOKqO6bYr3WgKZxO8Z16+hsOM=
 github.com/beorn7/perks v1.0.1/go.mod h1:G2ZrVWU2WbWT9wwq4/hrbKbnv/1ERSJQ0ibhJ6rlkpw=
