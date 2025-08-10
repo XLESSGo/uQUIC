@@ -6,7 +6,7 @@ on:
   # 允许手动从 GitHub Actions UI 触发此工作流
   workflow_dispatch:
   # 你也可以添加 'push' 触发器，以便在代码推送时自动运行
-   push:
+  push:
 
 
 # 定义工作任务
