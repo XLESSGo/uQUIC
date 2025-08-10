@@ -3,7 +3,7 @@ module github.com/XLESSGo/uquic
 go 1.24.0
 
 require (
-	github.com/ban6cat6/protean v0.0.0-20250804130928-662633c2b190
+	github.com/XLESSd/protean v0.0.0
 	github.com/francoispqt/gojay v1.2.13
 	github.com/onsi/ginkgo/v2 v2.23.4
 	github.com/onsi/gomega v1.37.0
