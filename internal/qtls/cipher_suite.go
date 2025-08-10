@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"unsafe"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 )
 
 //go:linkname cipherSuitesTLS13 github.com/refraction-networking/utls.cipherSuitesTLS13

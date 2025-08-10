@@ -12,7 +12,7 @@ import (
 	"time"
 
 	quic "github.com/XLESSGo/uquic"
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 
 	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
 	"github.com/XLESSGo/uquic/internal/protocol"

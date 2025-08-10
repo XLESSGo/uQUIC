@@ -9,7 +9,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 
 	mocklogging "github.com/XLESSGo/uquic/internal/mocks/logging"
 	"github.com/XLESSGo/uquic/internal/protocol"

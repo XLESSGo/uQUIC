@@ -16,7 +16,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 
 	quic "github.com/XLESSGo/uquic"
 	"github.com/XLESSGo/uquic/integrationtests/tools"

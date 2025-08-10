@@ -1,6 +1,6 @@
 package quic
 
-import tls "github.com/ban6cat6/protean"
+import tls "github.com/XLESSd/protean"
 
 const (
 	DefaultUDPDatagramMinSize = 1200

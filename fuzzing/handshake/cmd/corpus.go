@@ -5,7 +5,7 @@ import (
 	"log"
 	"net"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 
 	fuzzhandshake "github.com/XLESSGo/uquic/fuzzing/handshake"
 	"github.com/XLESSGo/uquic/fuzzing/internal/helper"
