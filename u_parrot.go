@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"math/big"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 )
 
 type QUICID struct {

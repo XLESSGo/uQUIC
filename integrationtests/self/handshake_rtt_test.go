@@ -8,7 +8,7 @@ import (
 	"time"
 
 	quic "github.com/XLESSGo/uquic"
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 
 	quicproxy "github.com/XLESSGo/uquic/integrationtests/tools/proxy"
 
