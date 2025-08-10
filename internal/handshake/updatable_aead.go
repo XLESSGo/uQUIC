@@ -7,7 +7,7 @@ import (
 	"fmt"
 	"time"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/qerr"

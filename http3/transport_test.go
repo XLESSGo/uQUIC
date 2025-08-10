@@ -13,7 +13,7 @@ import (
 	mockquic "github.com/XLESSGo/uquic/internal/mocks/quic"
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/qerr"
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/stretchr/testify/require"
 	"go.uber.org/mock/gomock"

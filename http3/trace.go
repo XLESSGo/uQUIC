@@ -7,7 +7,7 @@ import (
 	"net/textproto"
 	"time"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	quic "github.com/XLESSGo/uquic"
 )

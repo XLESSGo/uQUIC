@@ -3,7 +3,7 @@ package handshake
 import (
 	"net"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 )
 
 func setupConfigForServer(conf *tls.Config, localAddr, remoteAddr net.Addr) *tls.Config {

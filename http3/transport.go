@@ -15,7 +15,7 @@ import (
 
 	"golang.org/x/net/http/httpguts"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	quic "github.com/XLESSGo/uquic"
 	"github.com/XLESSGo/uquic/internal/protocol"

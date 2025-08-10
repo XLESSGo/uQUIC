@@ -10,7 +10,7 @@ import (
 	"os"
 	"sync"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	quic "github.com/XLESSGo/uquic"
 	"github.com/XLESSGo/uquic/http3"

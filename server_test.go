@@ -9,7 +9,7 @@ import (
 	"sync/atomic"
 	"time"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	"golang.org/x/time/rate"
 

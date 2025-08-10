@@ -7,7 +7,7 @@ import (
 	"net"
 	"time"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 
 	"github.com/XLESSGo/uquic/congestion"
 	"github.com/XLESSGo/uquic/internal/handshake"

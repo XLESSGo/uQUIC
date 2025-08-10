@@ -9,7 +9,7 @@ import (
 	"github.com/XLESSGo/uquic/internal/utils"
 	"github.com/XLESSGo/uquic/internal/wire"
 	"github.com/XLESSGo/uquic/logging"
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 )
 
 // [UQUIC]

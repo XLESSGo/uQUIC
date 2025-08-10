@@ -8,7 +8,7 @@ import (
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/utils"
 	"github.com/XLESSGo/uquic/logging"
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 )
 
 type UTransport struct {

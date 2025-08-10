@@ -13,7 +13,7 @@ import (
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/qerr"
 	"github.com/XLESSGo/uquic/quicvarint"
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 )
 
 // AdditionalTransportParametersClient are additional transport parameters that will be added

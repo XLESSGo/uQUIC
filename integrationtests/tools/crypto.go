@@ -11,7 +11,7 @@ import (
 	"net"
 	"time"
 
-	tls "github.com/XLESSd/protean"
+	tls "github.com/refraction-networking/utls"
 )
 
 const ALPN = "quic-go integration tests"
