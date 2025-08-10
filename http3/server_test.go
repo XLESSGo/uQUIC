@@ -17,7 +17,7 @@ import (
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/testdata"
 	"github.com/XLESSGo/uquic/quicvarint"
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 
 	"github.com/quic-go/qpack"
 	"go.uber.org/mock/gomock"

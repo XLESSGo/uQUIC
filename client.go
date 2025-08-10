@@ -6,7 +6,7 @@ import (
 	"net"
 
 	"github.com/XLESSGo/uquic/internal/protocol"
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 )
 
 // make it possible to mock connection ID for initial generation in the tests

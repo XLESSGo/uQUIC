@@ -12,7 +12,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 
 	"github.com/XLESSGo/uquic/internal/protocol"
 	"github.com/XLESSGo/uquic/internal/qerr"

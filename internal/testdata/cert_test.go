@@ -4,7 +4,7 @@ import (
 	"io"
 	"testing"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 
 	"github.com/stretchr/testify/require"
 )

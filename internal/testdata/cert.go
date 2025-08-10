@@ -6,7 +6,7 @@ import (
 	"path"
 	"runtime"
 
-	tls "github.com/refraction-networking/utls"
+	tls "github.com/ban6cat6/protean"
 )
 
 var certPath string
