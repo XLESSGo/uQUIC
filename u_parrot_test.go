@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 )
 
 func testDialPanic(t *testing.T, id QUICID) {

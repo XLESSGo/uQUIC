@@ -19,7 +19,7 @@ import (
 	"testing"
 	"time"
 
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 	"golang.org/x/sync/errgroup"
 
 	quic "github.com/XLESSGo/uquic"

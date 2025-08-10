@@ -21,7 +21,7 @@ import (
 	"github.com/XLESSGo/uquic/internal/utils"
 	"github.com/XLESSGo/uquic/internal/wire"
 	"github.com/XLESSGo/uquic/logging"
-	tls "github.com/ban6cat6/protean"
+	tls "github.com/XLESSd/protean"
 
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
